@@ -9,7 +9,7 @@ import { Keg } from './keg.model';
     <div class="container">
     <h1>Tap Room</h1>
     <keg-list
-    [kegList]="kegs">
+    [kegList]="kegs" (onKegSelect)="kegWasSelected($event)">
     </keg-list>
     </div>
   `
@@ -18,5 +18,8 @@ export class AppComponent {
   public kegs: Keg[];
   constructor() {
     this.kegs = [];
+  }
+  kegWasSelected(clickedKeg): void {
+    console.log(clickedKeg, 'this is the click even in the parent app');
   }
 }
