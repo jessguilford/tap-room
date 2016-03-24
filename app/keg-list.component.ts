@@ -6,9 +6,9 @@ import { NewKegComponent } from './new-keg.component';
 @Component({
   selector: 'keg-list',
   inputs: ['kegList'],
-  directives: [NewKegComponent],
+  directives: [KegComponent, NewKegComponent],
   template: `
-  <keg-display *ngFor=#keg of kegList>
+  <keg-display *ngFor="#kegItem of kegList" [keg]="kegItem">
   </keg-display>
   <new-keg (onSubmitNewKeg)="createKeg($event)">
   </new-keg>
@@ -24,5 +24,6 @@ export class KegListComponent {
     this.kegList.push(
       new Keg(name)
     );
+    console.log(this.kegList);
   }
 }

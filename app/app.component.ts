@@ -17,9 +17,6 @@ import { Keg } from './keg.model';
 export class AppComponent {
   public kegs: Keg[];
   constructor() {
-    this.kegs = [
-      new Keg("Rose Hip Brew"),
-      new Keg("Sleigher"),
-    ];
+    this.kegs = [];
   }
 }
